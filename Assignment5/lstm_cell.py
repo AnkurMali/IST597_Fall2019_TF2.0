@@ -48,7 +48,9 @@ class BasicLSTM_cell(object):
 
         # Placeholder for input vector with shape[batch_size, seq, embeddings]
         
-        self._inputs = tf.placeholder(tf.float32, shape=[None, None, self.input_nodes], name='inputs')
+        self._inputs = [batch_size, seq_length, self.input_nodes]
+        
+        
 
        
         batch_input_ = tf.transpose(self._inputs, perm=[2, 0, 1])
